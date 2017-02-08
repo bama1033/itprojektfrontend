@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.embed.swing.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="834.0" prefWidth="1241.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication4.FXMLDocumentController">
+    <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="74.0" layoutX="353.0" layoutY="721.0" stroke="BLACK" strokeType="INSIDE" width="222.0" />
+      <LineChart id="id_graph" fx:id="id_graph" createSymbols="false" layoutX="293.0" layoutY="14.0" prefHeight="660.0" prefWidth="927.0">
+        <xAxis>
+          <NumberAxis fx:id="id_axishorizontal" autoRanging="false" label="Uhrzeit" minorTickCount="4" minorTickLength="4.0" side="BOTTOM" tickLabelGap="4.0" tickLength="4.0" tickUnit="4.0" upperBound="24.0" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="id_axisvertical" autoRanging="false" label="Kapazität in %" side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <ComboBox id="id_city" fx:id="id_city" layoutX="34.0" layoutY="76.0" prefHeight="31.0" prefWidth="173.0" visibleRowCount="3">
+       <items>
+       <FXCollections fx:factory="observableArrayList">
+      <String fx:value="Frankfurt" />
+      <String fx:value="Nürnberg" />
+      <String fx:value="Hamburg" />
+       </FXCollections>
+     </items>
+   </ComboBox>
+      <Separator layoutX="241.0" orientation="VERTICAL" prefHeight="834.0" prefWidth="14.0" />
+      <ComboBox id="id_station" fx:id="id_station" layoutX="31.0" layoutY="172.0" prefHeight="31.0" prefWidth="177.0">
+             <items>
+       <FXCollections fx:factory="observableArrayList">
+      <String fx:value="Willy-Brandt-Platz" />
+      <String fx:value="Eschenheimer Tor" />
+      <String fx:value="Alte Oper" />
+      <String fx:value="Festhalle/Messe" />
+      <String fx:value="Merianplatz" />
+      <String fx:value="Industriehof" />
+       </FXCollections>
+     </items>
+   </ComboBox>
+      <ComboBox id="id_date" fx:id="id_date" layoutX="32.0" layoutY="266.0" onMouseEntered="#handleChangeDate" prefHeight="31.0" prefWidth="177.0">
+             <items>
+       <FXCollections fx:factory="observableArrayList">
+      <String fx:value="18.04.2016" />
+       </FXCollections>
+     </items>
+   </ComboBox>
+      <Label layoutX="705.0" layoutY="697.0" text="Gesamtkapazität - U-Bahn:" />
+      <Label layoutX="705.0" layoutY="756.0" text="Höchste Auslastung - U-Bahn:" />
+      <Label layoutX="948.0" layoutY="756.0" text="Höchste Auslastung - Bike:" />
+      <Label layoutX="948.0" layoutY="697.0" text="Gesamtkapazität - Bike:" />
+      <Button id="id_run" fx:id="id_run" layoutX="38.0" layoutY="563.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="31.0" prefWidth="166.0" text="Chart aufbauen" textAlignment="CENTER" />
+      <Button layoutX="42.0" layoutY="751.0" mnemonicParsing="false" onAction="#handleButtonActionClear" prefHeight="31.0" prefWidth="155.0" text="Chart leeren" />
+      <Label fx:id="cursorCoords" graphicTextGap="6.0" layoutX="362.0" layoutY="709.0" prefHeight="99.0" prefWidth="222.0" textAlignment="CENTER">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <Label layoutX="34.0" layoutY="45.0" prefHeight="21.0" prefWidth="51.0" text="Stadt:" />
+      <Label layoutX="34.0" layoutY="144.0" prefHeight="21.0" prefWidth="85.0" text="Haltestelle:" />
+      <Label layoutX="34.0" layoutY="239.0" prefHeight="21.0" prefWidth="85.0" text="Datum:" />
+      <Label layoutX="353.0" layoutY="697.0" text="Detailansicht Koordinate:" />
+      <TextField fx:id="GKu" editable="false" layoutX="705.0" layoutY="721.0" prefHeight="31.0" prefWidth="196.0" />
+      <TextField fx:id="HAu" editable="false" layoutX="705.0" layoutY="780.0" prefHeight="31.0" prefWidth="196.0" />
+      <TextField fx:id="GKb" editable="false" layoutX="948.0" layoutY="721.0" prefHeight="31.0" prefWidth="196.0" />
+      <TextField fx:id="HAb" editable="false" layoutX="948.0" layoutY="780.0" prefHeight="31.0" prefWidth="196.0" />
+      <Separator layoutX="1.0" layoutY="356.0" prefHeight="2.0" prefWidth="246.0" />
+      <Button layoutX="38.0" layoutY="612.0" mnemonicParsing="false" onAction="#handleButtonActionBahn" prefHeight="31.0" prefWidth="72.0" text="Bahn" />
+      <Button layoutX="133.0" layoutY="612.0" mnemonicParsing="false" onAction="#handleButtonActionBike" prefHeight="31.0" prefWidth="72.0" text="Bike" />
+    </children>
+</AnchorPane>
